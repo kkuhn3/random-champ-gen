@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="container" id="container">
+			<input type='button' value='GenRandom' onclick='champGen.randomChamp()'/>
+			<div>
+				<img id='champImg' src=''/> 
+			</div>
+			<div id="champText"></div>
+		</div>
+	</body>
+	<script src="ChampGen.js"></script>
+	<script>
+		function init(){
+			champGen = new ChampGen();
+			champGen.init();
+		}
+		$(document).ready(function(){init();});
+	</script>
+</html>
