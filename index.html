@@ -1,15 +1,10 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="index.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	</head>
-	<body>
-		<div class="container" id="container">
-			<input type='button' value='GenRandom' onclick='champGen.randomChamp()'/>
-			<div>
-				<img id='champImg' src=''/> 
-			</div>
-			<div id="champText"></div>
+	<body style="background-color: #111111">
+		<div class="container" id="container" style="height: 100%; margin: auto;">
+			<img id='champImg' src='' style="object-fit: cover; width: 100%; height: 100%;" onclick="champGen.randomChamp()"/> 
 		</div>
 	</body>
 	<script src="ChampGen.js"></script>
@@ -17,7 +12,15 @@
 		function init(){
 			champGen = new ChampGen();
 			champGen.init();
+			keepRatio();
+		}
+		function keepRatio(){
+			var divHeight = $('.container').height();
+			$('.container').css({
+				'width': divHeight*.885 + 'px'
+			});
 		}
 		$(document).ready(function(){init();});
+		window.onresize = keepRatio;
 	</script>
 </html>
