@@ -95,6 +95,7 @@ Rakan
 Rammus
 RekSai
 Rell
+Renata
 Renekton
 Rengar
 Riven
@@ -151,6 +152,7 @@ Yorick
 Yuumi
 Zac
 Zed
+Zeri
 Ziggs
 Zilean
 Zoe
