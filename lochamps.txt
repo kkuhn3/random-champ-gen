@@ -15,6 +15,7 @@ Belveth
 Blitzcrank
 Brand
 Braum
+Briar
 Caitlyn
 Camille
 Cassiopeia
@@ -75,9 +76,11 @@ Malphite
 Malzahar
 Maokai
 MasterYi
+Milio
 MissFortune
 Mordekaiser
 Morgana
+Naafiri
 Nami
 Nasus
 Nautilus
