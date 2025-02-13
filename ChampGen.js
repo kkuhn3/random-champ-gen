@@ -1,21 +1,21 @@
-LOCHAMPS = [];
+let champions = {};
 
-function ChampGen(){
-	this.init = function(){
-		fetch('./lochamps.txt')
-			.then(response => response.text())
-			.then(data => {
-				LOCHAMPS = data.split("\n");
-				champGen.randomChamp();
-			});
-	}
-	
-	this.randomChamp = function(){
-		const randomInd = Math.floor(Math.random() * LOCHAMPS.length);
-		const randChamp = LOCHAMPS[randomInd];
-		const randChampImg = "./img/" + randChamp + ".jpg"
-		document.getElementById("champImg").src = randChampImg;
-		document.title = randChamp;
-		return randChamp;
-	}
+async function loadContent() {
+	const versionRes = await fetch('https://ddragon.leagueoflegends.com/realms/na.json', {
+		method: 'GET'
+	});
+	const versions = await versionRes.json();
+
+	const championRes = await fetch('https://ddragon.leagueoflegends.com/cdn/' + versions['n']['champion'] + '/data/en_US/champion.json', {
+		method: 'GET'
+	});
+	champions = await championRes.json();
+}
+
+function randomChamp() {
+	const keys = Object.keys(champions['data']);
+	const key = keys[ keys.length * Math.random() << 0]
+    const champion = champions['data'][key];
+    document.getElementById("champImg").src = 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/' + key + '_0.jpg';
+    document.title = champion['name'];
 }

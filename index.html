@@ -2,11 +2,13 @@
 	<head>
 	</head>
 	<body style="background-color: #111111">
-		<img id='champImg' src='' style="object-fit: cover; width: 100%; height: 100%;" onclick="champGen.randomChamp()"/> 
+		<img id='champImg' src='' style="object-fit: contain; width: 100%; height: 100%;" onclick="randomChamp()"/> 
 	</body>
 	<script src="ChampGen.js"></script>
 	<script>
-		champGen = new ChampGen();
-		champGen.init();
+		(async() => {
+			await loadContent();
+			randomChamp();
+		})();
 	</script>
 </html>
